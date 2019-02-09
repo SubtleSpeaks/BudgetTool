@@ -35,7 +35,7 @@ class Calculator extends Component {
   }
 
   Calculate = () => {
-    let result = this.state.term1Start + this.state.term1End;
+    let result = Object.values(this.state).reduce((a, b) => a + b);
     return(result)
   }
 
