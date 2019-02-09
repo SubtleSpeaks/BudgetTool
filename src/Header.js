@@ -17,7 +17,7 @@ class Header extends Component {
           <img src={logo} className="App-logo" alt="logo" width="120"/>
         </div>
         <div className="App-header-center">
-          <h1>🧮 Student Budget Tool 💸</h1>
+          <h1>🧮 Student Budget Calculator 💸</h1>
         </div>
         <div className="App-header-right">
         </div>

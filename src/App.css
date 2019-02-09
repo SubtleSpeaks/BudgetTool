@@ -12,7 +12,7 @@ input                 { border:1px solid #cccccc; border-radius: 5px;}
 .column div           { height: 30px; margin: 2px; margin-right: 10px; display: flex; justify-content:flex-end; align-items: center;}
 
 .App {
-  font-size: calc(8px + 1.5vmin);
+  font-size: calc(3px + 2vmin);
   font-family: 'Raleway', sans-serif;
   background-color: #232933;
   min-height: 100vh;
