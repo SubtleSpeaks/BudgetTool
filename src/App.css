@@ -1,32 +1,73 @@
-.App {
-  text-align: center;
-}
+h1    {  margin: 10px; }
+h2    {  margin: 10px;  text-align: left; text-decoration: underline; padding-top: 20px; }
+h3    {  margin: 10px; }
+h4    {  margin: 0px; }
+p     {  margin: 2px;  font-size: 16px; }
+table {  padding-bottom: 30px; }
+tr    {  flex: wrap;  }
+td    {  vertical-align: bottom; }
+input {  border:1px solid #cccccc; border-radius: 5px;}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.App {
+  font-size: calc(2vmin);
+  text-align: center;
+  background-color: #232933;
+  min-height: 100vh;
+  color: white;
+  width: 100%;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
+  padding: 30px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  border: solid;
+  border-width: 0px;
+  border-bottom-width: 2px;
+  border-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-body {
+  align-content: center;
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.IntroductionText {
+  width: 70%;
+  padding: 20px;
+}
+
+.TermAndTenancyDates {
+  background-color: hotpink;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.Income {
+  background-color: darkturquoise;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.Outgoing {
+  background-color: mediumslateblue;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.result {
+  margin: 20px;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }

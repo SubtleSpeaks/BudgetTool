@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './Header.js';
+import Calculator from './Calculator.js';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <div className="App-body">
+          <div className="IntroductionText">
+            <h4>This tool is designed to let you play around with your numbers to
+            make sure you feel financially secure - because no one likes being
+            stressed about money.</h4>
+            <br/>
+            <h4>If you're already halfway through term, input the start date of the
+            term you're currently in as today and leave the previous terms blank.
+            </h4>
+          </div>
+          <Calculator />
+        </div>
       </div>
     );
   }
