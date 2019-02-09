@@ -1,16 +1,19 @@
-h1    {  margin: 10px; }
-h2    {  margin: 10px;  text-align: left; text-decoration: underline; padding-top: 20px; }
-h3    {  margin: 10px; }
-h4    {  margin: 0px; }
-p     {  margin: 2px;  font-size: 16px; }
-table {  padding-bottom: 30px; }
-tr    {  flex: wrap;  }
-td    {  vertical-align: bottom; }
-input {  border:1px solid #cccccc; border-radius: 5px;}
+h2                    { margin: 10px;  text-align: left; }
+h3                    { margin: 10px; }
+h4                    { margin: 0px; }
+p                     { margin: 2px;  font-size: 16px; }
+input                 { border:1px solid #cccccc; border-radius: 5px;}
+.IntroductionText     { border-radius: 10px;  padding: 20px;  margin: 20px; color: #232933; background-color: white;}
+.TermAndTenancyDates  { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: hotpink; }
+.Income               { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: darkturquoise; }
+.Outgoing             { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: mediumslateblue; }
+.Result               { border: solid;  border-color: white;  border-radius: 10px;   padding: 20px; margin: 40px; }
+.row                  { display: flex; flex-wrap: wrap; margin-top: 10px; margin-bottom: 20px; justify-content: center; }
+.column div           { height: 30px; margin: 2px; margin-right: 10px; display: flex; justify-content:flex-end; align-items: center;}
 
 .App {
-  font-size: calc(2vmin);
-  text-align: center;
+  font-size: calc(8px + 1.5vmin);
+  font-family: 'Raleway', sans-serif;
   background-color: #232933;
   min-height: 100vh;
   color: white;
@@ -19,10 +22,9 @@ input {  border:1px solid #cccccc; border-radius: 5px;}
 
 .App-header {
   height: 10vh;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  width: 100%;
   border: solid;
   border-width: 0px;
   border-bottom-width: 2px;
@@ -30,44 +32,8 @@ input {  border:1px solid #cccccc; border-radius: 5px;}
 }
 
 .App-body {
-  align-content: center;
   display: flex;           /* establish flex container */
   flex-direction: column;  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
   align-items: center;
-}
-
-.IntroductionText {
-  width: 70%;
-  padding: 20px;
-}
-
-.TermAndTenancyDates {
-  background-color: hotpink;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-}
-
-.Income {
-  background-color: darkturquoise;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-}
-
-.Outgoing {
-  background-color: mediumslateblue;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-}
-
-.result {
-  margin: 20px;
-  border: solid;
-  border-color: white;
-  border-width: 2px;
-  border-radius: 10px;
-  margin-bottom: 50px;
 }

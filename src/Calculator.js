@@ -6,20 +6,36 @@ class Calculator extends Component {
 
     this.state = {
       // many input states
-      term1StartInput: "",
-      term2StartInput: "",
-      term3StartInput: "",
-      tenancyStartInput: "",
-      term1EndInput: "",
-      term2EndInput: "",
-      term3EndInput: "",
-      tenancyEndInput: "",
+      term1Start: "",
+      term2Start: "",
+      term3Start: "",
+      tenancyStart: "",
+      term1End: "",
+      term2End: "",
+      term3End: "",
+      tenancyEnd: "",
+      instalment1Date: "",
+      instalment1Amount: "",
+      instalment2Date: "",
+      instalment2Amount: "",
+      instalment3Date: "",
+      instalment3Amount: "",
+      inheritanceDate: "",
+      inheritanceAmount: "",
+      weeklyIncome: "",
+      monthlyIncome: "",
+      weeklyOutgoing: "",
+      monthlyOutgoing: "",
+      christmasBudget: "",
+      easterBudget: "",
+      summerBudget: "",
+      // one result
       result: ""
     }
   }
 
   Calculate = () => {
-    let result = this.state.term1StartInput + this.state.term1EndInput;
+    let result = this.state.term1Start + this.state.term1End;
     return(result)
   }
 
@@ -39,341 +55,300 @@ class Calculator extends Component {
       <div className="Calculator">
 
         <div className="TermAndTenancyDates">
-          <h2>Term & Tenancy Dates</h2>
-          <table style={{style: "width:100%"}}>
-            <tr>
-              <td>
-              </td>
-              <td>
-                <p>Term 1</p>
-              </td>
-              <td>
-                <p>Term 2</p>
-              </td>
-              <td>
-                <p>Term 3</p>
-              </td>
-              <td>
-                <p>Tenancy</p>
-                <p>(leave blank if NA)</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Start:</p>
-              </td>
-              <td>
+          <h2>Term & tenancy dates</h2>
+          <div className="row">
+            <div className="column">
+              <div><h4>Term 1</h4></div>
+              <div>
+                <p>Start:</p>&nbsp;
                 <input
-                  name="term1StartInput"
+                  name="term1Start"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.term1StartInput}
+                  value={this.state.term1Start}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>End:</p>&nbsp;
                 <input
-                  name="term2StartInput"
+                  name="term1End"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.term2StartInput}
+                  value={this.state.term1End}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+            </div>
+            <div className="column">
+              <div><h4>Term 2</h4></div>
+              <div>
+                <p>Start:</p>&nbsp;
                 <input
-                  name="term3StartInput"
+                  name="term2Start"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.term3StartInput}
+                  value={this.state.term2Start}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>End:</p>&nbsp;
                 <input
-                  name="tenancyStartInput"
+                  name="term2End"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.tenancyStartInput}
+                  value={this.state.term2End}
                   onChange={this.handleChange}
                 />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>End:</p>
-              </td>
-              <td>
+              </div>
+            </div>
+            <div className="column">
+              <div><h4>Term 3</h4></div>
+              <div>
+                <p>Start:</p>&nbsp;
                 <input
-                  name="term1EndInput"
+                  name="term3Start"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.term1EndInput}
+                  value={this.state.term3Start}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>End:</p>&nbsp;
                 <input
-                  name="term2EndInput"
+                  name="term3End"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.term2EndInput}
+                  value={this.state.term3End}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+            </div>
+            <div className="column">
+              <div><h4>Tenancy (Leave blank if NA)</h4></div>
+              <div>
+                <p>Start:</p>&nbsp;
                 <input
-                  name="term3EndInput"
+                  name="tenancyStart"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.term3EndInput}
+                  value={this.state.tenancyStart}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>End:</p>&nbsp;
                 <input
-                  name="tenancyEndInput"
+                  name="tenancyEnd"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.tenancyEndInput}
+                  value={this.state.tenancyEnd}
                   onChange={this.handleChange}
                 />
-              </td>
-            </tr>
-          </table>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="Income">
           <h2>Income</h2>
-          <h3>Singular income:</h3>
-          <table style={{style: "width:100%"}}>
-            <tr>
-              <td>
-              </td>
-              <td>
-                <p>Instalment 1</p>
-              </td>
-              <td>
-                <p>Instalment 2</p>
-              </td>
-              <td>
-                <p>Instalment 3</p>
-              </td>
-              <td>
-                <p>Other</p>
-                <p>(inheritance etc)</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Date:</p>
-              </td>
-              <td>
+          <p><strong>Loan instalments:</strong></p>
+
+          <div className="row">
+            <div className="column">
+              <div><h4>Instalment 1</h4></div>
+              <div>
+                <p>Date:</p>&nbsp;
                 <input
-                  name="instalment1DateInput"
+                  name="instalment1Date"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.instalment1DateInput}
+                  value={this.state.instalment1Date}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Amount:</p>&nbsp;
                 <input
-                  name="instalment2DateInput"
+                  name="instalment1Amount"
+                  type="number"
+                  placeholder="enter value"
+                  value={this.state.instalment1Amount}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="column">
+              <div><h4>Instalment 2</h4></div>
+              <div>
+                <p>Date:</p>&nbsp;
+                <input
+                  name="instalment2Date"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.instalment2DateInput}
+                  value={this.state.instalment2Date}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Amount:</p>&nbsp;
                 <input
-                  name="instalment3DateInput"
+                  name="instalment2Amount"
+                  type="number"
+                  placeholder="enter value"
+                  value={this.state.instalment2Amount}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="column">
+              <div><h4>Instalment 3</h4></div>
+              <div>
+                <p>Date:</p>&nbsp;
+                <input
+                  name="instalment3Date"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.instalment3DateInput}
+                  value={this.state.instalment3Date}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Amount:</p>&nbsp;
                 <input
-                  name="inheritanceDateInput"
+                  name="instalment3Amount"
+                  type="number"
+                  placeholder="enter value"
+                  value={this.state.instalment3Amount}
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+            <div className="column">
+              <div><h4>Inheritance/Other</h4></div>
+              <div>
+                <p>Date:</p>&nbsp;
+                <input
+                  name="insheritanceDate"
                   type="date"
                   placeholder="enter value"
-                  value={this.state.inheritanceDateInput}
+                  value={this.state.inheritanceDate}
                   onChange={this.handleChange}
                 />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Amount:</p>
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Amount:</p>&nbsp;
                 <input
-                  name="instalment1AmountInput"
+                  name="inheritanceAmount"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.instalment1AmountInput}
+                  value={this.state.inheritanceAmount}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+            </div>
+          </div>
+
+          <p><strong>Regular income:</strong></p>
+
+          <div className="row">
+            <div className="column">
+              <div>
+                <p>Weekly:</p>&nbsp;
                 <input
-                  name="instalment2AmountInput"
+                  name="weeklyIncome"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.instalment2AmountInput}
+                  value={this.state.weeklyIncome}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Monthly:</p>&nbsp;
                 <input
-                  name="instalment3AmountInput"
+                  name="monthylIncome"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.instalment3AmountInput}
+                  value={this.state.monthlyIncome}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
-                <input
-                  name="inheritanceAmountInput"
-                  type="number"
-                  placeholder="enter value"
-                  value={this.state.inheritanceAmountInput}
-                  onChange={this.handleChange}
-                />
-              </td>
-            </tr>
-          </table>
-          <h3>Regular income:</h3>
-          <table style={{style: "width:100%"}}>
-            <tr>
-              <td>
-              </td>
-              <td>
-                <p>Weekly</p>
-              </td>
-              <td>
-                <p>Monthly</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Amount:</p>
-              </td>
-              <td>
-                <input
-                  name="weeklyIncomeInput"
-                  type="number"
-                  placeholder="enter value"
-                  value={this.state.weeklyIncomeInput}
-                  onChange={this.handleChange}
-                />
-              </td>
-              <td>
-                <input
-                  name="monthlyIncomeInput"
-                  type="number"
-                  placeholder="enter value"
-                  value={this.state.monthlyIncomeInput}
-                  onChange={this.handleChange}
-                />
-              </td>
-            </tr>
-          </table>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="Outgoing">
           <h2>Outgoing</h2>
-          <h3>Regular outgoing:</h3>
-          <table style={{style: "width:100%"}}>
-            <tr>
-              <td>
-              </td>
-              <td>
-                <p>Weekly</p>
-              </td>
-              <td>
-                <p>Monthly</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Amount:</p>
-              </td>
-              <td>
+          <p><strong>Regular outgoing:</strong></p>
+
+          <div className="row">
+            <div className="column">
+              <div><p>Amount:</p></div>
+              <div>
+                <p>Weekly:</p>&nbsp;
                 <input
-                  name="weeklyOutgoingInput"
+                  name="weeklyOutgoing"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.weeklyOutgoingInput}
+                  value={this.state.weeklyOutgoing}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Monthly:</p>&nbsp;
                 <input
-                  name="monthlyOutgoingInput"
+                  name="monthlyOutgoing"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.monthlyOutgoingInput}
+                  value={this.state.monthlyOutgoing}
                   onChange={this.handleChange}
                 />
-              </td>
-            </tr>
-          </table>
-          <h3>Holiday budgets:</h3>
-          <table style={{style: "width:100%"}}>
-            <tr>
-              <td>
-              </td>
-              <td>
-                <p>Christmas</p>
-              </td>
-              <td>
-                <p>Easter</p>
-              </td>
-              <td>
-                <p>Summer</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Amount</p>
-              </td>
-              <td>
+              </div>
+            </div>
+          </div>
+
+          <p><strong>Holiday budgets:</strong></p>
+
+          <div className="row">
+            <div className="column">
+              <div><p>Amount:</p></div>
+              <div>
+                <p>Christmas:</p>&nbsp;
                 <input
-                  name="christmasBudgetInput"
+                  name="christmasBudget"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.weeklyOutgoingInput}
+                  value={this.state.christmasBudget}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Easter:</p>&nbsp;
                 <input
-                  name="easterBudgetInput"
+                  name="easterBudget"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.monthlyOutgoingInput}
+                  value={this.state.easterBudget}
                   onChange={this.handleChange}
                 />
-              </td>
-              <td>
+              </div>
+              <div>
+                <p>Summer:</p>&nbsp;
                 <input
-                  name="summerBudgetInput"
+                  name="summerBudget"
                   type="number"
                   placeholder="enter value"
-                  value={this.state.monthlyOutgoingInput}
+                  value={this.state.summerBudget}
                   onChange={this.handleChange}
                 />
-              </td>
-            </tr>
-          </table>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="result">
+        <div className="Result">
           <h3>
             Your weekly spending budget:
           </h3>

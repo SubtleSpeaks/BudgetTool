@@ -10,15 +10,21 @@ class App extends Component {
         <Header />
         <div className="App-body">
           <div className="IntroductionText">
-            <h4>This tool is designed to let you play around with your numbers to
-            make sure you feel financially secure - because no one likes being
-            stressed about money.</h4>
+            <p><strong>This tool is designed to let you play around with numbers to help you feel financially secure - because no one likes being stressed about money.</strong></p>
             <br/>
-            <h4>If you're already halfway through term, input the start date of the
-            term you're currently in as today and leave the previous terms blank.
-            </h4>
+            <p><strong>GUIDE 🤓:
+            <ul>
+              <li>If you're already halfway through term, use current date as term start date and leave the previous terms blank.</li>
+              <li>If a field is not applicable to you just leave it blank.</li>
+              <li>After inputing values find your budget at the bottom of the page.</li>
+            </ul>
+            </strong></p>
+            <p>Please leave any feedback at the bottom of the page 💖</p>
           </div>
           <Calculator />
+          <div className="footer">
+            <p>For students, made with love by Subtle Speaks.</p>
+          </div>
         </div>
       </div>
     );
