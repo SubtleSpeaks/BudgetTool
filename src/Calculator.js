@@ -64,7 +64,7 @@ class Calculator extends Component {
                 <input
                   name="term1Start"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.term1Start}
                   onChange={this.handleChange}
                 />
@@ -74,7 +74,7 @@ class Calculator extends Component {
                 <input
                   name="term1End"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.term1End}
                   onChange={this.handleChange}
                 />
@@ -87,7 +87,7 @@ class Calculator extends Component {
                 <input
                   name="term2Start"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.term2Start}
                   onChange={this.handleChange}
                 />
@@ -97,7 +97,7 @@ class Calculator extends Component {
                 <input
                   name="term2End"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.term2End}
                   onChange={this.handleChange}
                 />
@@ -110,7 +110,7 @@ class Calculator extends Component {
                 <input
                   name="term3Start"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.term3Start}
                   onChange={this.handleChange}
                 />
@@ -120,7 +120,7 @@ class Calculator extends Component {
                 <input
                   name="term3End"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.term3End}
                   onChange={this.handleChange}
                 />
@@ -133,7 +133,7 @@ class Calculator extends Component {
                 <input
                   name="tenancyStart"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.tenancyStart}
                   onChange={this.handleChange}
                 />
@@ -143,7 +143,7 @@ class Calculator extends Component {
                 <input
                   name="tenancyEnd"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.tenancyEnd}
                   onChange={this.handleChange}
                 />
@@ -164,7 +164,7 @@ class Calculator extends Component {
                 <input
                   name="instalment1Date"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.instalment1Date}
                   onChange={this.handleChange}
                 />
@@ -187,7 +187,7 @@ class Calculator extends Component {
                 <input
                   name="instalment2Date"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.instalment2Date}
                   onChange={this.handleChange}
                 />
@@ -210,7 +210,7 @@ class Calculator extends Component {
                 <input
                   name="instalment3Date"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.instalment3Date}
                   onChange={this.handleChange}
                 />
@@ -233,7 +233,7 @@ class Calculator extends Component {
                 <input
                   name="insheritanceDate"
                   type="date"
-                  placeholder="enter value"
+                  placeholder="yyyy-mm-dd"
                   value={this.state.inheritanceDate}
                   onChange={this.handleChange}
                 />

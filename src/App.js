@@ -10,6 +10,8 @@ class App extends Component {
         <Header />
         <div className="App-body">
           <div className="IntroductionText">
+            <h3>Calculate your weekly budget in 3 easy steps!</h3>
+            <br/>
             <p><strong>This tool is designed to let you play around with numbers to help you feel financially secure - because no one likes being stressed about money.</strong></p>
             <br/>
             <p><strong>GUIDE 🤓:
