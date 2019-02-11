@@ -55,7 +55,7 @@ class Calculator extends Component {
       <div className="Calculator">
 
         <div className="TermAndTenancyDates">
-          <h2>Term & tenancy dates</h2>
+          <h2>Term Dates</h2>
           <div className="row">
             <div className="column">
               <div><h4>Term 1</h4></div>
@@ -122,29 +122,6 @@ class Calculator extends Component {
                   type="date"
                   placeholder="yyyy-mm-dd"
                   value={this.state.term3End}
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-            <div className="column">
-              <div><h4>Tenancy (Leave blank if NA)</h4></div>
-              <div>
-                <p>Start:</p>&nbsp;
-                <input
-                  name="tenancyStart"
-                  type="date"
-                  placeholder="yyyy-mm-dd"
-                  value={this.state.tenancyStart}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div>
-                <p>End:</p>&nbsp;
-                <input
-                  name="tenancyEnd"
-                  type="date"
-                  placeholder="yyyy-mm-dd"
-                  value={this.state.tenancyEnd}
                   onChange={this.handleChange}
                 />
               </div>
@@ -227,7 +204,7 @@ class Calculator extends Component {
               </div>
             </div>
             <div className="column">
-              <div><h4>Inheritance/Other</h4></div>
+              <div><h4>Other</h4></div>
               <div>
                 <p>Date:</p>&nbsp;
                 <input
@@ -251,7 +228,7 @@ class Calculator extends Component {
             </div>
           </div>
 
-          <p><strong>Regular income:</strong></p>
+          <p><strong>Regular income: (Got a job? Family allowance?)</strong></p>
 
           <div className="row">
             <div className="column">
@@ -281,7 +258,7 @@ class Calculator extends Component {
 
         <div className="Outgoing">
           <h2>Outgoing</h2>
-          <p><strong>Regular outgoing:</strong></p>
+          <p><strong>Regular outgoing: (Estimate bills + travel costs to be a super budgeteer. Don't forget rent!)</strong></p>
 
           <div className="row">
             <div className="column">
