@@ -7,7 +7,7 @@ input                 { border:1px solid #cccccc; border-radius: 5px;}
 .TermAndTenancyDates  { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: hotpink; }
 .Income               { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: darkturquoise; }
 .Outgoing             { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: mediumslateblue; }
-.Result               { border: solid;  border-color: white;  border-radius: 10px;   padding: 20px; margin: 40px; }
+.Result               { display: flex;  justify-content: center;  align-items: center;  border: solid;  border-color: white;  border-radius: 10px;   padding: 20px; margin: 40px; }
 .row                  { display: flex; flex-wrap: wrap; margin-top: 10px; margin-bottom: 20px; justify-content: center; }
 .column div           { height: 30px; margin: 2px; margin-right: 10px; display: flex; justify-content:flex-end; align-items: center;}
 

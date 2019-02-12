@@ -34,8 +34,132 @@ class Calculator extends Component {
     }
   }
 
+  GetStartDate = () => {
+    let startDate = "";
+    // check for earliest term date to set as startDate
+    if (this.state.term1Start !== "") { startDate = this.state.term1Start; return(startDate); }
+    if (this.state.term2Start !== "") { startDate = this.state.term2Start; return(startDate); }
+    if (this.state.term3Start !== "") { startDate = this.state.term3Start; return(startDate); }
+    return(startDate);
+  }
+
+  GetEndDate = () => {
+    let endDate = "";
+    // check for last term date to set as endDate
+    if (this.state.term3End !== "") { endDate = this.state.term3End; return(endDate); }
+    if (this.state.term2End !== "") { endDate = this.state.term2End; return(endDate); }
+    if (this.state.term1End !== "") { endDate = this.state.term1End; return(endDate); }
+    return(endDate);
+  }
+
+  CheckIncome = (weekDay) => {
+    // check instalments are on different days
+    if (this.state.instalment1Date === this.state.instalment2Date || this.state.instalment1Date === this.state.instalment3Date || this.state.instalment2Date === this.state.instalment3Date) {
+      alert("You cannot have multiple instalments on the same day!")
+      return;
+    }
+
+    // define variables
+    let incomeDate = new Date();
+    let otherIncomeDate = new Date();
+    let income = 0;
+
+    // get Date variables of instalment dates and add instalment amount to income if date matches weekDay
+    if (this.state.instalment1Date !== "") {
+      incomeDate = this.state.instalment1Date;
+      incomeDate = new Date(incomeDate)
+
+      // check if incomeDate matches weekDay (which is a full date not a day)
+      if (incomeDate === weekDay) {
+        income += this.state.instalment1Amount;
+      }
+    }
+
+    if (this.state.instalment2Date !== "") {
+      incomeDate = this.state.instalment2Date;
+      incomeDate = new Date(incomeDate)
+
+      // check if incomeDate matches weekDay (which is a full date not a day)
+      if (incomeDate === weekDay) {
+        income += this.state.instalment2Amount;
+      }
+    }
+
+    if (this.state.instalment3Date !== "") {
+      incomeDate = this.state.instalment3Date;
+      incomeDate = new Date(incomeDate)
+
+      // check if incomeDate matches weekDay (which is a full date not a day)
+      if (incomeDate === weekDay) {
+        income += this.state.instalment3Amount;
+      }
+    }
+
+    if (this.state.inheritanceDate !== "") {
+      otherIncomeDate = this.state.inheritanceDate;
+      otherIncomeDate = new Date(otherIncomeDate)
+
+      // check if incomeDate matches weekDay (which is a full date not a day)
+      if (otherIncomeDate === weekDay) {
+        income += this.state.inheritanceAmount;
+      }
+    }
+
+    return(income);
+
+  }
+
+  CheckOutgoing = (weekDay) => {
+    // need to write this
+  }
+
   Calculate = () => {
-    let result = Object.values(this.state).reduce((a, b) => a + b);
+
+    // define week figure array to store weekly money calcs
+    let weekIncome = [];
+    let weekOutgoing = [];
+    let weekResult = [];
+    let weekResults = [];
+
+    // get start and end dates
+    let startDate = this.GetStartDate();
+    let endDate = this.GetEndDate();
+
+    // define weekDay, weekStart and weekEnd as Date variables
+    let weekDay = new Date();
+    let weekStart = new Date(startDate);
+    let weekEnd = new Date();
+    weekEnd.setDate(weekStart.getDate() + 7);
+    // adding week buffer to endDate to allow for full final week if term ends on different day to start
+    endDate.setDate(endDate.getDate() + 7);
+
+    // external loop from startDate to endDate
+    while (weekEnd <= endDate) {
+      // update weekStart and weekEnd variables for next week
+      weekStart.setDate(weekStart.getDate() + 7);
+      weekEnd.setDate(weekStart.getDate() + 7);
+      // refresh week income and outcome arrays
+      weekIncome = [];
+      weekOutgoing = [];
+      weekResult = [];
+
+      // internal week loop, check for income and outgoing
+      while (weekDay !== weekEnd) {
+        weekIncome.push(this.CheckIncome(weekDay));
+        weekOutgoing.push(this.CheckOutgoing(weekDay));
+
+        // if dd value = 01 add monthlyIncome and deduct monthlyOutgoing
+      }
+
+      // add weeklyIncome and deduct weeklyOutgoing
+
+      // store week final figure as data array
+      weekResult = weekIncome.reduce((a, b) => a + b, 0) - weekOutgoing.reduce((a, b) => a + b, 0);
+      weekResults.push(weekResult);
+    }
+
+    let result = weekStart + weekEnd;
+
     return(result)
   }
 
