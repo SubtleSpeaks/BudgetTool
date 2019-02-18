@@ -54,7 +54,7 @@ class Calculator extends Component {
 
   CheckIncome = (weekDay) => {
     // check instalments are on different days
-    if (this.state.instalment1Date === this.state.instalment2Date || this.state.instalment1Date === this.state.instalment3Date || this.state.instalment2Date === this.state.instalment3Date) {
+    if ((this.state.instalment1Date && (this.state.instalment1Date === this.state.instalment2Date)) || (this.state.instalment1Date && (this.state.instalment1Date === this.state.instalment3Date)) || (this.state.instalment2Date && (this.state.instalment2Date === this.state.instalment3Date))) {
       alert("You cannot have multiple instalments on the same day!")
       return;
     }
@@ -125,40 +125,67 @@ class Calculator extends Component {
     let startDate = this.GetStartDate();
     let endDate = this.GetEndDate();
 
-    // define weekDay, weekStart and weekEnd as Date variables
-    let weekDay = new Date();
+    // define weekDay, weekStart and weekEnd as Date variables and assign initial values
     let weekStart = new Date(startDate);
+    let weekDay = weekStart;
     let weekEnd = new Date();
     weekEnd.setDate(weekStart.getDate() + 7);
+
     // adding week buffer to endDate to allow for full final week if term ends on different day to start
+    endDate = new Date(endDate);
     endDate.setDate(endDate.getDate() + 7);
+
+    console.log("Week Start: " + weekStart)
+    console.log("Week Day: " + weekDay)
+    console.log("Week End: " + weekEnd)
+    console.log("End Date: " + endDate)
 
     // external loop from startDate to endDate
     while (weekEnd <= endDate) {
-      // update weekStart and weekEnd variables for next week
-      weekStart.setDate(weekStart.getDate() + 7);
-      weekEnd.setDate(weekStart.getDate() + 7);
+
+      console.log("in external week loop");
+
       // refresh week income and outcome arrays
       weekIncome = [];
       weekOutgoing = [];
       weekResult = [];
 
-      // internal week loop, check for income and outgoing
-      while (weekDay !== weekEnd) {
-        weekIncome.push(this.CheckIncome(weekDay));
-        weekOutgoing.push(this.CheckOutgoing(weekDay));
-
-        // if dd value = 01 add monthlyIncome and deduct monthlyOutgoing
-      }
+      // // internal week loop, check for income and outgoing
+      // while (weekDay.getDate() !== weekEnd.getDate()) {
+      //
+      //   console.log("in internal week loop");
+      //
+      //   weekIncome.push(this.CheckIncome(weekDay));
+      //   weekOutgoing.push(this.CheckOutgoing(weekDay));
+      //
+      //   // add monthlyIncome and deduct monthlyOutgoing
+      //   if (weekDay.getDate() === "1" || "01") {
+      //     weekIncome.push(this.state.monthlyIncome);
+      //     weekOutgoing.push(this.state.monthlyOutgoing);
+      //   }
+      //
+      //   // incriment weekDay
+      //   weekDay.setDate(weekDay.getDate() + 1);
+      //
+      //   console.log("Week Day: " + weekDay)
+      //   console.log("Week End: " + weekEnd)
+      //   break;
+      // }
 
       // add weeklyIncome and deduct weeklyOutgoing
+      weekIncome.push(this.state.weeklyIncome);
+      weekOutgoing.push(this.state.weeklyOutgoing);
 
       // store week final figure as data array
       weekResult = weekIncome.reduce((a, b) => a + b, 0) - weekOutgoing.reduce((a, b) => a + b, 0);
       weekResults.push(weekResult);
+
+      // update weekStart and weekEnd variables for next week
+      weekStart.setDate(weekStart.getDate() + 7);
+      weekEnd.setDate(weekStart.getDate() + 7);
     }
 
-    let result = weekStart + weekEnd;
+    let result = weekResults.reduce((a, b) => a + b, 0);
 
     return(result)
   }
