@@ -16,7 +16,7 @@ class App extends Component {
             <br/>
             <p><strong>GUIDE 🤓:</strong></p>
             <ul>
-              <li><p>If you're already halfway through term, use current date as current term start date and leave the previous terms blank.</p></li>
+              <li><p>If you're already halfway through term, use today's date as current term start date and leave the previous terms blank.</p></li>
               <li><p>If a field is not applicable to you just leave it blank.</p></li>
               <li><p>After inputing values find your budget below.</p></li>
             </ul>
