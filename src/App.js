@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Header.js';
-import Calculator from './Calculator.js';
-import './App.css';
+import Header from './components/Header.js';
+import Calculator from './components/Calculator.js';
+import './styles/App.css';
 
 class App extends Component {
   constructor() {
@@ -43,6 +43,7 @@ class App extends Component {
       <div className="App">
 
         <Header />
+        
         <div className="App-body">
 
           <div className="toggleGuideText">

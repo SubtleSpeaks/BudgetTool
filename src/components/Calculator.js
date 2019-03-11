@@ -236,12 +236,14 @@ class Calculator extends Component {
     return(
 
       <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+      <div className="TabBar">
         <TabList>
           <Tab>Dates</Tab>
           <Tab>Income</Tab>
           <Tab>Outgoing</Tab>
           <Tab>Result</Tab>
         </TabList>
+        </div>
         <TabPanel>
           <div className="TermAndTenancyDates">
             <h2>Term Dates</h2>
