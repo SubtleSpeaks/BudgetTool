@@ -58,11 +58,12 @@ class App extends Component {
           <div className="Feedback">
             <h2>Feedback</h2>
             <p>How has this tool worked for you? If you have any feedback or requests please drop an email.</p>
-            <a href="mailto:seb@subtlespeaks.co.uk"><h4>Send a feedback email</h4></a>
+            <br />
+            <a href="mailto:seb@subtlespeaks.co.uk"><h4>Send feedback email</h4></a>
           </div>
 
-          <div className="footer">
-            <p>For students. Made with love by Subtle Speaks.</p>
+          <div className="Footer">
+            <p>For students. Made with love by Subtle Speaks 💖</p>
           </div>
 
         </div>
