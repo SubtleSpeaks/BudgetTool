@@ -13,14 +13,8 @@ class Header extends Component {
   render() {
     return(
       <div className="App-header">
-        <div className="App-header-left">
-          <img src={logo} className="App-logo" alt="logo" width="120"/>
-        </div>
-        <div className="App-header-center">
-          <h1>🧮 Student Budget Calculator 💸</h1>
-        </div>
-        <div className="App-header-right">
-        </div>
+        <img src={logo} className="App-logo" alt="logo" width="150"/>
+        <h1>Student Budget Calculator 💸 🧮</h1>
       </div>
     )
   }

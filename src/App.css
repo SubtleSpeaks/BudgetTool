@@ -3,16 +3,19 @@ h3                    { margin: 10px; }
 h4                    { margin: 0px; }
 p                     { margin: 2px;  font-size: 16px; }
 input                 { border:1px solid #cccccc; border-radius: 5px;}
+.toggleGuideText      { width: 100%; text-decoration: underline; color: white; }
+.toggleGuideButton    { float: right; }
 .IntroductionText     { border-radius: 10px;  padding: 20px;  margin: 20px; color: #232933; background-color: white;}
-.TermAndTenancyDates  { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: hotpink; }
-.Income               { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: darkturquoise; }
-.Outgoing             { border-radius: 20px;  padding: 20px;  margin: 20px; background-color: mediumslateblue; }
+.Calculator           { margin-top: 30px; padding: 20px; }
+.TermAndTenancyDates  { border-radius: 20px;  padding: 20px; background-color: hotpink; }
+.Income               { border-radius: 20px;  padding: 20px; background-color: darkturquoise; }
+.Outgoing             { border-radius: 20px;  padding: 20px; background-color: mediumslateblue; }
 .Result               { display: flex;  justify-content: center;  align-items: center;  border: solid;  border-color: white;  border-radius: 10px;   padding: 20px; margin: 40px; }
+.Feedback             { border-radius: 10px;  padding: 20px;  margin: 20px; margin-top: 50px; color: #232933; background-color: white;}
 .row                  { display: flex; flex-wrap: wrap; margin-top: 10px; margin-bottom: 20px; justify-content: center; }
 .column div           { height: 30px; margin: 2px; margin-right: 10px; display: flex; justify-content:flex-end; align-items: center;}
 
 .App {
-  font-size: calc(3px + 2vmin);
   font-family: 'Raleway', sans-serif;
   background-color: #232933;
   min-height: 100vh;
@@ -21,9 +24,9 @@ input                 { border:1px solid #cccccc; border-radius: 5px;}
 }
 
 .App-header {
-  height: 10vh;
-  padding: 20px;
+  text-align: center;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   border: solid;
